@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retro Web Page</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: "Courier New", Courier, monospace;
+            color: #000080;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #cccccc;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #000080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #cccccc;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+        img {
+            height: 150px;
+            margin-right: 10px;
+        }
+        iframe {
+            width: 560px;
+            height: 315px;
+            border: none;
+        }
+        input, textarea {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            width: 300px;
+        }
+      @media (max-width: 600px) {
+    #lightbox-img {
+        width: 90%;
+        height: auto;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#pictures">Pictures</a>
+        <a href="#video">Video</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <h1>Welcome to My Retro Web Page</h1>
+        <p>This is a simple one-page website inspired by early internet design. Explore the sections below to see some cool pictures, watch a video, or contact me!</p>
+    </section>
+
+    <section id="pictures">
+        <h2>My Favorite Pictures</h2>
+        <img src="https://cdn.pixabay.com/photo/2015/06/20/13/55/man-815795_1280.jpg" alt="Placeholder Image 1">
+        <img src="https://cdn.pixabay.com/photo/2018/07/28/01/08/vintage-3567130_1280.jpg" alt="Placeholder Image 2">
+        <img src="https://cdn.pixabay.com/photo/2024/02/12/14/56/woman-8568693_1280.jpg" alt="Placeholder Image 3">
+    </section>
+
+    <section id="video">
+        <h2>Watch This!</h2>
+        <p>Here's a fun video from YouTube:</p>
+<iframe width="914" height="514" src="https://www.youtube.com/embed/BrnDlRmW5hs" title="old songs but it&#39;s lofi remix" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+
+            <input type="submit" value="Send">
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 My Retro Site, Riadh Ablahhad. All rights reserved.
+    </footer>
+<!-- Lightbox Modal -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;">
+    <span id="lightbox-close" style="position:absolute; top:20px; right:30px; font-size:40px; color:white; cursor:pointer;">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged Image" style="max-width:90%; max-height:90%; box-shadow: 0 0 20px white;">
+</div>
+<script>
+    const images = document.querySelectorAll('section#pictures img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('lightbox-close');
+
+    images.forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = img.src;
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    // Close modal on click outside image
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
