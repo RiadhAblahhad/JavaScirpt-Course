@@ -1,0 +1,251 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    margin: 0%;
+    opacity: 1;
+    transition: 3s opacity;
+    letter-spacing: .2vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5vw;
+    overflow-x: hidden;
+    user-select: none;
+    background-color: #1b1b2f; /* Dark retro purple-blue */
+    color: #f8f8f2;
+}
+
+body.fade-out {
+    opacity: .1;
+}
+
+/* Heading 1 elements */
+h1 {
+    text-transform: uppercase;
+    font-family: 'Lucida Console', Monaco, monospace;
+    text-align: center;
+    margin-top: 3%;
+    color: #ff77ff; /* Retro hot pink */
+}
+
+h1:hover {
+    filter: grayscale(5%);
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+
+.white-text {
+    color: #00ffff; /* Neon cyan */
+    padding-top: 10vh;
+}
+
+/* Paragraphs */
+p {
+    font-family: 'Lucida Console', 'Courier New', monospace;
+    text-align: justify;
+    letter-spacing: .1vw;
+    font-size: 2.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    color: #ffcc99; /* Soft retro orange */
+}
+
+p:hover {
+    transition: transform 1s;
+    transform: scale(1.01);
+}
+
+.center {
+    text-align: center;
+}
+
+.center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+
+/* Anchor elements */
+a {
+    color: #00ffcc; /* Bright teal */
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Quotes */
+q {
+    font-style: italic;
+}
+
+/* Images */
+img {
+    filter: grayscale(75%);
+    border-radius: 8px;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+img:hover {
+    filter: grayscale(5%);
+}
+
+/* Footer */
+footer {
+    padding: 2%;
+    background-color: #2c003e; /* Deep purple */
+}
+
+/***** Navbar Styling *****/
+.Navbar {
+    overflow: hidden;
+    background-color: #121212; /* Deep black */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    animation: moveNav 5s;
+}
+
+@keyframes moveNav {
+    from {left: -100vw;}
+    to { left: 0vw; }
+}
+
+.Navbar a {
+    float: left;
+    display: block;
+    color: #00ffff;
+    padding: .75vw 1vw;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5vw;
+    text-align: center;
+    position: relative;
+    animation: moveNavText 5.75s;
+}
+
+@keyframes moveNavText {
+    from {top: -100vw;}
+    to {top: 0vw;}
+}
+
+.Navbar a:hover {
+    background-color: #ff00aa;
+    color: #000000;
+    cursor: pointer;
+    transition: 0.5s ease-in;
+}
+
+.Navbar a.active {
+    background-color: #ff6600;
+}
+
+/***** Video Styling *****/
+#Typing_Video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+}
+
+.Video_Text {
+    background: rgba(0, 0, 0, 0.6);
+    color: #00ffff;
+    width: 100%;
+    height: 100vh;
+    padding-top: 2vh;
+    position: relative;
+    animation: moveVideoText 5.75s;
+}
+
+@keyframes moveVideoText {
+    from {top: -100vw;}
+    to {top: 0vw;}
+}
+
+/***** Slideshow Styling *****/
+#Slideshow_Background {
+    background: rgba(20, 20, 20, 0.45);
+}
+
+.Slideshow_Images {
+    box-shadow: 0px 5px 10px 12px rgba(255, 105, 180, .75); /* Retro pink shadow */
+}
+
+.Previous, .Next {
+    color: #ff77ff;
+}
+
+.Previous:hover, .Next:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #00ffcc;
+}
+
+.text {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* Slideshow dots */
+.dot {
+    background-color: #00ffff;
+}
+.active, .dot:hover {
+    background-color: #ff77ff;
+}
+
+/***** Table Styling *****/
+.Column_1 {
+    background-color: #2f2f4f;
+    color: #f1f1c1;
+}
+.Column_2 {
+    background-color: #ffcc99;
+    color: #000000;
+}
+
+/***** Contact Form Styling *****/
+.Pop_Up_Button {
+    background-color: #ff77ff;
+    color: #000;
+    border: solid #00ffff;
+}
+
+.form-container {
+    background-color: #222;
+    color: #fff;
+}
+
+.form-container input[type=text] {
+    background: #eee;
+    color: #111;
+}
+
+/* General button styling */
+button {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    background-color: #000;
+    color: #0ff;
+    border: 2px solid #ff00ff;
+}
+
+button:hover, .form-container .btn:hover {
+    color: #fff;
+    background-color: #ff00aa;
+    border-color: #00ffff;
+}
+
+/* Cancel button */
+.form-container .cancel {
+    background-color: #000;
+    color: #ff77ff;
+    border-color: #0ff;
+}
+
+.form-container .cancel:hover {
+    background-color: #ff0033;
+    border-color: #ffcc99;
+}
